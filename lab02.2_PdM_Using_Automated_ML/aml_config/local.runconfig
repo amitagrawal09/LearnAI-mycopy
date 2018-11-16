@@ -30,7 +30,7 @@ environment:
 # Set True to perform this run inside a Docker container.
     enabled: false
 # Base image used for Docker-based runs.
-    baseImage: mcr.microsoft.com/azureml/base:0.1.3
+    baseImage: mcr.microsoft.com/azureml/base:0.1.4
 # Set False if necessary to work around shared volume bugs.
     sharedVolumes: true
 # Run with NVidia Docker extension to support GPUs.
@@ -78,7 +78,7 @@ batchai:
 # Tensorflow details.
 tensorflow:
 # The number of worker tasks.
-  workerCount: 2
+  workerCount: 1
 # The number of parameter server tasks.
   parameterServerCount: 1
 # Mpi details.
@@ -95,3 +95,13 @@ containerInstance:
   region:
 # data reference configuration details
 dataReferences: {}
+# AMlCompute details.
+amlcompute:
+# VM size of the Cluster to be created.Allowed values are Azure vm sizes.The list of vm sizes is available in 'https://docs.microsoft.com/en-us/azure/cloud-services/cloud-services-sizes-specs
+  vmSize:
+# VM priority of the Cluster to be created.Allowed values are "dedicated" , "lowpriority".
+  vmPriority:
+# Location of the Cluster to be created.
+  location:
+# A bool that indicates if the compute target has to be retained after job completion.
+  retainCluster: false
